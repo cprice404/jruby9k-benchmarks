@@ -1,0 +1,32 @@
+Detected JRuby version 1.7.x, setting compatVersion 1.9.
+Setting compileMode to: 'JIT'
+JRUBY VERSION: 1.7.20.1
+COMPILE MODE: jit
+                           user     system      total        real
+warmup (100 runs):     0.118000   0.000000   0.118000 (  0.118000)
+middle (10000 runs):   1.186000   0.000000   1.186000 (  1.187000)
+tail (100 runs):       0.006000   0.000000   0.006000 (  0.005000)
+Detected JRuby version 1.7.x, setting compatVersion 1.9.
+Setting compileMode to: 'OFF'
+JRUBY VERSION: 1.7.20.1
+COMPILE MODE: off
+                           user     system      total        real
+warmup (100 runs):     0.213000   0.000000   0.213000 (  0.213000)
+middle (10000 runs):   1.179000   0.000000   1.179000 (  1.179000)
+tail (100 runs):       0.009000   0.000000   0.009000 (  0.009000)
+Detected JRuby version 9k, skipping compatVersion.
+Setting compileMode to: 'JIT'
+JRUBY VERSION: 9.1.1.0
+COMPILE MODE: jit
+                           user     system      total        real
+warmup (100 runs):     1.540000   0.080000   1.620000 (  0.313015)
+middle (10000 runs):   7.410000   0.400000   7.810000 (  2.312263)
+tail (100 runs):       0.040000   0.000000   0.040000 (  0.017072)
+Detected JRuby version 9k, skipping compatVersion.
+Setting compileMode to: 'OFF'
+JRUBY VERSION: 9.1.1.0
+COMPILE MODE: off
+                           user     system      total        real
+warmup (100 runs):     0.730000   0.010000   0.740000 (  0.138776)
+middle (10000 runs):   4.890000   0.300000   5.190000 (  1.905043)
+tail (100 runs):       0.030000   0.010000   0.040000 (  0.019285)
