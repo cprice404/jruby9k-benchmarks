@@ -3,3 +3,4 @@ Some benchmarks / reproducers for comparing JRuby 1.7 performance with JRuby 9k,
 
 * [JSON parsing / serializing benchmark](./json-comparison)
 * [Time.parse benchmark](./time-parse-comparison)
+* [Jar file descriptor leak reproducer](./jar-file-desc-leak)
