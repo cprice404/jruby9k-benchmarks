@@ -1,8 +1,9 @@
 #!/usr/bin/env ruby
 
 subcommand_output = 'file_desc_leak_subcommand_output.txt'
+benchmark_output = 'file_desc_leak_output.txt'
 
-benchmark_output_files = ['file_desc_leak_output.txt',
+benchmark_output_files = [benchmark_output ,
                           subcommand_output]
 benchmark_output_files.each do |f|
   if File.exists?(f)
@@ -20,3 +21,5 @@ open(subcommand_output, 'w') do |f|
   puts "Running."
   f.puts `mvn exec:java -Dexec.mainClass=jruby9k.FileDescLeakDriver`
 end
+
+puts "Output available in '#{benchmark_output}'"

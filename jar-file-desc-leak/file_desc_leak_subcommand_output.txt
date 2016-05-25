@@ -10,7 +10,7 @@
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
 [INFO] Total time: 0.163 s
-[INFO] Finished at: 2016-05-25T16:18:52-07:00
+[INFO] Finished at: 2016-05-25T16:51:39-07:00
 [INFO] Final Memory: 9M/228M
 [INFO] ------------------------------------------------------------------------
 [INFO] Scanning for projects...
@@ -30,9 +30,9 @@
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time: 1.069 s
-[INFO] Finished at: 2016-05-25T16:18:54-07:00
-[INFO] Final Memory: 17M/284M
+[INFO] Total time: 1.143 s
+[INFO] Finished at: 2016-05-25T16:51:41-07:00
+[INFO] Final Memory: 16M/234M
 [INFO] ------------------------------------------------------------------------
 [INFO] Scanning for projects...
 [INFO]                                                                         
@@ -83,7 +83,7 @@ java.lang.IllegalThreadStateException
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time: 26.772 s
-[INFO] Finished at: 2016-05-25T16:19:22-07:00
-[INFO] Final Memory: 166M/853M
+[INFO] Total time: 27.013 s
+[INFO] Finished at: 2016-05-25T16:52:09-07:00
+[INFO] Final Memory: 139M/718M
 [INFO] ------------------------------------------------------------------------
