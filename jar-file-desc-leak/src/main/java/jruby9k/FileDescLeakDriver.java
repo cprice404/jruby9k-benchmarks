@@ -18,14 +18,56 @@ import java.util.List;
 
 public class FileDescLeakDriver {
 
+    static class StreamReader extends Thread {
+        private final Process proc;
+        private String stdout;
+
+        StreamReader(Process proc) {
+            this.proc = proc;
+        }
+
+        public String getStdout() {
+            return stdout;
+        }
+
+        @Override
+        public void run() {
+            InputStream inStream = proc.getInputStream();
+            InputStream errStream = proc.getErrorStream();
+            try {
+                stdout = IOUtils.toString(inStream, "UTF-8");
+                IOUtils.toString(errStream, "UTF-8");
+            } catch (IOException e) {
+                System.err.println("Failed to read stream: " + e.getMessage());
+            } finally {
+                try {
+                    proc.getInputStream().close();
+                } catch (IOException e) {
+                    System.err.println("Attempt to close input stream failed" +
+                            e.getMessage());
+                }
+                try {
+                    proc.getErrorStream().close();
+                } catch (IOException e) {
+                    System.err.println("Attempt to close error stream failed" +
+                            e.getMessage());
+                }
+            }
+        }
+    }
+
     public static List<String> lsofJrubyJars() throws InterruptedException, IOException {
         POSIX posix = POSIXFactory.getPOSIX();
         int pid = posix.getpid();
         ProcessBuilder pb = new ProcessBuilder("lsof", "-p", String.valueOf(pid));
         Process proc = pb.start();
+        StreamReader reader = new StreamReader(proc);
+        reader.start();
+
         proc.waitFor();
-        String stdout = IOUtils.toString(proc.getInputStream(), "UTF-8");
-        IOUtils.toString(proc.getErrorStream(), "UTF-8");
+        reader.join();
+
+        String stdout = reader.getStdout();
 
         String[] lines = StringUtils.split(stdout, '\n');
         List<String> rv = new ArrayList<>();
